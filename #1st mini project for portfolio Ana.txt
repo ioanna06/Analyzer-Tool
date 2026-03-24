@@ -1,0 +1,64 @@
+#1st mini project for portfolio Analyzer Tool
+
+dna = ("AGTTCCGAGCCTAGGCAGGCATAG")
+print("Length", len(dna))
+print("A:", dna.count("A"))
+print("C:", dna.count("C"))
+print("G:", dna.count("G"))
+print("T:", dna.count("T"))
+
+gc = dna.count("G") + dna.count("C")
+gc_content = (gc / len(dna)) * 100
+print("GC Content", gc_content)
+
+
+def analyze_dna(dna):
+  print("Length", len(dna))
+  print("A:", dna.count("A"))
+  print("C:", dna.count("C"))
+  print("G:", dna.count("G"))
+  print("T:", dna.count("T"))
+
+  gc= dna.count("G") + dna.count("C")
+  gc_content = (gc / len(dna)) * 100
+  print("GC Content", gc_content)
+
+dna = input("Δώσε DNA:")
+analyze_dna(dna)
+
+
+def is_valid_dna(seq):
+  for base in seq:
+    if base not in "ACGT":
+      return False
+  return True
+dna = input("Δώσε DNA:")
+
+if is_valid_dna(dna):
+  analyze_dna(dna)
+else:
+  print("Invalid DNA sequence.")
+
+
+def clean_dna(seq):
+  return seq.upper().replace(" ", "")
+
+def transcribe_dna(dna):
+  return dna.replace("T", "U")
+
+   
+dna = input("Δώσε DNA:")
+dna = clean_dna(dna)
+rna = transcribe_dna(dna)
+
+print("RNA:", rna)
+ 
+if is_valid_dna(dna):
+  analyze_dna(dna)
+else:
+  print("Invalid DNA sequence.")
+
+print("Reverse DNA:", dna[::-1])
+
+
+
