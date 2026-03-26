@@ -1,4 +1,4 @@
-#1st mini project for portfolio Analyzer Tool
+#Analyzer Tool (1st mini project)
 
 dna = ("AGTTCCGAGCCTAGGCAGGCATAG")
 print("Length", len(dna))
